@@ -54,3 +54,5 @@ async def get_all_foods():
             food["phone"] = users["phone"]
             foods.append(food)
     return foods
+
+app.include_router(book_router, prefix="/book")
