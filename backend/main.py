@@ -3,8 +3,24 @@ from dotenv import dotenv_values
 from pymongo import MongoClient
 from routes import router as book_router
 
+from user import User
+from user import Food
+
 config = dotenv_values(".env")
 app = FastAPI()
+
+# create example user
+test_user = User(
+    name="John Doe",
+    username="johndoe",
+    email="john@gmail.com",
+    phone="123-456-7890",
+    food= Food(
+        name="apple",
+        description="A red apple",
+        expiry="2022-05-01"
+    )
+)
 
 @app.on_event("startup")
 def startup_db_client():
@@ -15,8 +31,32 @@ def startup_db_client():
 def shutdown_db_client():
     app.mongodb_client.close()
 
+@app.get("/user/{username}")
+async def get_user_info(username: str):
+    collection = app.database['books']
+    return collection.find_one({ "title": "string" })
+
+def create_user():
+    document = {
+        "username": test_user.username,
+        "address": test_user.address,
+        "email": test_user.email,
+        "name": test_user.name,
+        "phone" : test_user.phone,
+        "foods": [ 
+            {
+                "name": test_user.food.name,
+                "description": test_user.food.description,
+                "expiry": test_user.food.expiry
+            }
+        ]
+    }
+    return document
+
 @app.get("/")
-def hello_world():
-    return "Hello world!"
+async def insert_user(user: dict):
+    create_user()
+    collection = app.database['plate-it-forward']
+    return collection.insert_one(user)
 
 app.include_router(book_router, tags=["books"], prefix="/book")
