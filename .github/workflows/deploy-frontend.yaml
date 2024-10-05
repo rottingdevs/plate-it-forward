@@ -1,0 +1,54 @@
+name: frontend
+
+on:
+  push:
+    branches:
+      - release
+    paths:
+      - frontend/**
+
+env:
+  IMAGE_NAME: plate-it-forward-frontend
+
+jobs:
+  push:
+    runs-on: ubuntu-22.04
+    if: github.event_name == 'push'
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+
+      - name: login to ghcr
+        run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u catherine-sun --password-stdin
+
+      - name: push image to ghcr
+        run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # Use Docker `latest` tag convention
+          [ "$VERSION" == "main" ] && VERSION=latest
+          echo IMAGE_ID=$IMAGE_ID
+          echo VERSION=$VERSION
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:$VERSION
+
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 35.182.205.74
+          username: ubuntu
+          key: ${{ secrets.KEY }}
+          script: |
+            docker compose down
+            docker compose pull && docker compose up -d
