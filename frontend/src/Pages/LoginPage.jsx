@@ -35,7 +35,9 @@ function LoginPage() {
                     placeholder="Enter password"
                   />
                 </div>
-                <button className="login-button" type="submit">Sign in</button>
+                <Link to="/search" className="link">
+                  <button className="login-button" type="submit">Sign in</button>
+                </Link>
                 <div className="newaccount-group">
                 <label>New to Plate it Forward? <Link to="/signup">Sign up</Link>
                 </label>
