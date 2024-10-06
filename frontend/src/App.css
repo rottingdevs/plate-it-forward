@@ -9,6 +9,7 @@
   height: 100%;
   overflow: hidden;
   font-family: "Inter", "sans-serif";
+  background-color: #FFFCF5;
 }
 
 h1 {
@@ -208,6 +209,7 @@ h2 {
 }
 
 .aboutsdg {
+  background-color: #FFFCF5;
   margin: auto;
   text-align: center;
   max-width: 1000px;

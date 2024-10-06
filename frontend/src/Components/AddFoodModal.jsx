@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { addLocation } from '../api';
 
 const Modal = ({ isOpen, onClose, addCard }) => {
     if (!isOpen) return null; // If the modal is not open, do not render anything
@@ -32,6 +33,7 @@ const Modal = ({ isOpen, onClose, addCard }) => {
             image: './raddish.png',
             user: 'Bobby Brown',
         })
+        addLocation();
     };
 
     return (

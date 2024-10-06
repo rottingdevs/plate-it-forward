@@ -34,3 +34,7 @@ export async function getUserFoods(username) {
 export async function getAllFoods() {
   return await sendRequest(`foods`, "GET");
 }
+
+export async function addLocation() {
+  return sendRequest("locations", "POST");
+}

@@ -11,10 +11,11 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
+        "http://localhost:5173/",
         "https://plateitforward.co"
     ],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -33,6 +34,10 @@ def shutdown_db_client():
 @app.get("/")
 def hello_world():
     return "Hello world!"
+
+@app.post("/locations")
+async def insert_location():
+    app.locations.insert_one({"_id": "delete this before demoing again!!!!", "lng": -79.3595, "lat": 43.6506, "address": 'Raddish'})
 
 @app.get("/locations")
 async def get_all_locations():
