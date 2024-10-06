@@ -1,9 +1,7 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import dotenv_values
 from pymongo import MongoClient
-from routes import router as book_router
-import uvicorn
-import os
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
@@ -11,6 +9,17 @@ logger = logging.getLogger(__name__)
 
 config = dotenv_values(".env")
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://plateitforward.co"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.on_event("startup")
 def startup_db_client():
@@ -54,5 +63,3 @@ async def get_all_foods():
             food["phone"] = users["phone"]
             foods.append(food)
     return foods
-
-app.include_router(book_router, prefix="/book")
