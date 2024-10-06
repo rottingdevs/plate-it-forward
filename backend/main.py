@@ -33,7 +33,7 @@ def create_user(username, address, email, name, phone):
     }
     return user
 
-def create_food(username, name, description, expiry:
+def create_food(username, name, description, expiry):
     food = {
         "username": username,
         "name": name,
