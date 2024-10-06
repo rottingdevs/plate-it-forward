@@ -485,3 +485,61 @@ body {
   height: 50px;
   filter: grayscale(100%); /* Make the image #525252 */
 }
+
+/* Landing page */
+
+.full-screen-image {
+  position: relative;
+  width: 100vw;      /* Full viewport width */
+  height: 100vh;     /* Full viewport height */
+  overflow: hidden;  /* Prevent any overflow */
+}
+
+.image {
+  position: absolute; /* Position the image absolutely */
+  top: 50%;          /* Move to the center vertically */
+  left: 50%;         /* Move to the center horizontally */
+  width: 100vw;      /* Set width to 100% of the viewport */
+  height: 100vh;     /* Set height to 100% of the viewport */
+  object-fit: cover; /* Scale the image to cover the area */
+  transform: translate(-50%, -50%); /* Center the image */
+}
+
+
+.overlay {
+  position: absolute;       /* Position the overlay absolutely */
+  top: 50%;                /* Center vertically */
+  left: 50%;               /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center */
+  text-align: center;      /* Center text */
+  color: white;            /* Change text color as needed */
+}
+
+.text {
+  font-size: 6rem;         /* Make the text super big */
+  margin-bottom: 20px;     /* Space between text and button */
+  color: white; /* Text color */
+  text-shadow: 
+    -5px -5px 0 #74A91F,  
+    5px -5px 0 #74A91F,
+    -5px  5px 0 #74A91F,
+    5px  5px 0 #74A91F;
+}
+
+.sign-in-button {
+  width: 100%;          /* Make button full width */
+  max-width: 300px;    /* Set a max width for the button */
+  padding: 15px;       /* Button padding */
+  font-size: 1.5rem;   /* Button text size */
+  background-color: #74A91F; /* Button background color */
+  color: white;        /* Button text color */
+  border: none;        /* Remove border */
+  border-radius: 5px;  /* Rounded corners */
+  cursor: pointer;     /* Pointer cursor */
+  margin: 0 auto;     /* Center button */
+  font-family: "Inter", "sans-serif";
+}
+
+.sign-in-button:hover {
+  background-color: #5c8e1a; /* Darker shade on hover */
+}

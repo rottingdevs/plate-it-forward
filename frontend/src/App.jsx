@@ -6,13 +6,14 @@ import LoginPage from "./Pages/LoginPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUpPage from "./Pages/SignUpPage";
 import MyListingsPage from "./Pages/MyListingsPage";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
   return (
     // add routers
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MapSearch />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/search" element={<MapSearch />} />

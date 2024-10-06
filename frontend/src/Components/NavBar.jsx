@@ -1,9 +1,12 @@
 import "../App.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <div className="navbar">
-      <img className="logo" src="./logo.svg" />
+      <Link to="/">
+        <img className="logo" src="./logo.svg" />
+      </Link>
       <div className="navButtonsGroup">
         <a className="navButton" href="search">
           Search food
