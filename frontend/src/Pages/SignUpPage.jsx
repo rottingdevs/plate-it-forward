@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
-import NavBar from '../Components/NavBar';
-import '../App.css';
-import {Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import NavBar from "../Components/NavBar";
+import "../App.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUpPage() {
-  const [username, setUsername] = useState('');
-  const navigate = useNavigate(); 
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
-       const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent page refresh on form submission
-        navigate('/');
-    };
-
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent page refresh on form submission
+    navigate("/search");
+  };
 
   return (
     <>
@@ -31,10 +30,7 @@ function SignUpPage() {
             </div>
             <div className="input-group">
               <label>Create Password</label>
-              <input
-                type="password"
-                placeholder="Enter password"
-              />
+              <input type="password" placeholder="Enter password" />
             </div>
             <button className="login-button" type="submit">
               Sign up

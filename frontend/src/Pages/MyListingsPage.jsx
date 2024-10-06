@@ -24,7 +24,7 @@ function MyListingsPage() {
         <>
             <NavBar />
             <div className="left70pad">
-                <h1>Thanks for reducing food waste!</h1>
+                <h1>Thanks for reducing food waste, Bobby!</h1>
                 <br></br>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <h3>Your food listings</h3>
@@ -46,14 +46,14 @@ function MyListingsPage() {
                     <MyFoodCard
                         className="my-food-card"
                         foodItem={{
-                            name: "Bok choy",
-                            description: "2 heads of baby bok choy.",
-                            expiry: 2,
-                            image: "./bokchoy.png",
+                            name: "Strawberries",
+                            description: "Quarter container of strawberries.",
+                            expiry: 4,
+                            image: "./strawberries.png",
                             user: "Bobby Brown",
                         }}
                     />
-                    <MyFoodCard
+                    {/* <MyFoodCard
                         className="my-food-card"
                         foodItem={{
                             name: "Bok choy",
@@ -92,7 +92,7 @@ function MyListingsPage() {
                             image: "./bokchoy.png",
                             user: "Bobby Brown",
                         }}
-                    />
+                    /> */}
                     {/* Duplicate MyFoodCard components as necessary */}
                 </div>
             </div>

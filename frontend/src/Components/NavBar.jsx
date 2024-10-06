@@ -14,7 +14,7 @@ function NavBar() {
         <a className="navButton" href="mylistings">
           My food
         </a>
-        <a className="navButton" href="about">
+        <a className="navButton" href="aboutsdg">
           About SDG
         </a>
       </div>

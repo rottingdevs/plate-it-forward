@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import NavBar from '../Components/NavBar';
-import '../App.css';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import React, { useState } from "react";
+import NavBar from "../Components/NavBar";
+import "../App.css";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 
 function LoginPage() {
-    const [username, setUsername] = useState('');
-    const navigate = useNavigate(); 
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
-       const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent page refresh on form submission
-        navigate('/');
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent page refresh on form submission
+    navigate("/search");
+  };
 
     return (
         <>
@@ -49,4 +49,4 @@ function LoginPage() {
       );      
     }
 
-    export default LoginPage;
+export default LoginPage;
