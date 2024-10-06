@@ -2,31 +2,10 @@ from fastapi import FastAPI
 from dotenv import dotenv_values
 from pymongo import MongoClient
 from routes import router as book_router
-import uvicorn
-import os
-import logging
-
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger(__name__)
-
-from user import User
-from user import Food
+import base64
 
 config = dotenv_values(".env")
 app = FastAPI()
-
-# create example user
-test_user = User(
-    name="John Doe",
-    username="johndoe",
-    email="john@gmail.com",
-    phone="123-456-7890",
-    food= Food(
-        name="apple",
-        description="A red apple",
-        expiry="2022-05-01"
-    )
-)
 
 @app.on_event("startup")
 def startup_db_client():
@@ -34,7 +13,6 @@ def startup_db_client():
     app.database = app.mongodb_client[config.get("DB_NAME")]
     app.users = app.database['users']
     app.foods = app.database['foods']
-
 
 @app.on_event("shutdown")
 def shutdown_db_client():
@@ -55,14 +33,14 @@ def create_user(username, address, email, name, phone):
     }
     return user
 
-def create_post(name, description, expiry, image):
-    post = {
+def create_food(username, name, description, expiry:
+    food = {
+        "username": username,
         "name": name,
         "description": description,
-        "expiry": expiry,
-        "image": image
+        "expiry": expiry
     }
-    return post
+    return food
 
 @app.post("/user/")
 async def insert_user(user: dict):
@@ -71,7 +49,7 @@ async def insert_user(user: dict):
     app.collection.insert_one(user)
 
 @app.post("/user")
-async def insert_post(post: dict):
+async def insert_food(post: dict):
     app.collection.insert_one(post)
 
 @app.get("/users")
@@ -101,14 +79,14 @@ async def get_all_foods():
     foods = []
     for food in result:
         foods.append(food)
-    return foods
-    
+    return foods 
 
 @app.get("/{username}/contact")
 async def get_contact_info(username: str):
     contact = {}
     user = app.users.find_one({"username": username})
     contact["email"] = user["email"]
+    contact["name"] = user["name"]
     contact["phone"] = user["phone"]
     contact["address"] = user["address"]
     return contact
