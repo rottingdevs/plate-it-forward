@@ -111,6 +111,7 @@ h2 {
   margin-top: 20px;
 }
 
+/* FOOD CARD - Default style */
 .card {
   background-color: #f0ede4;
   border: none;
@@ -119,10 +120,29 @@ h2 {
   margin-right: 15px;
   margin-bottom: 15px;
   display: flex;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
+/* HOVER EFFECT (only applies if the item is not selected) */
 .card:hover {
   background-color: #f9ca5574;
+}
+
+/* SELECTED STATE - Takes priority */
+.card.selected {
+  background-color: #f9cb55; /* Ensure this takes precedence */
+  border-radius: 20px;
+  padding: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  transition: background-color 0.3s ease;
+}
+
+/* Disable hover effect on selected items */
+.card.selected:hover {
+  background-color: #f9cb55 !important; /* Keep yellow on hover if selected */
 }
 
 .expiryTag {
