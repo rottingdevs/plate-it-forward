@@ -16,7 +16,8 @@ app = FastAPI()
 def startup_db_client():
     app.mongodb_client = MongoClient(config.get("ATLAS_URI"))
     app.database = app.mongodb_client[config.get("DB_NAME")]
-    app.collection = app.database['users']
+    app.users = app.database['users']
+    app.foods = app.database['foods']
 
 
 @app.on_event("shutdown")
@@ -29,7 +30,7 @@ def hello_world():
 
 @app.get("/users")
 async def get_all_users():
-    result = app.collection.find({})
+    result = app.users.find({})
     users = []
     for user in result:
         users.append(user)
@@ -37,22 +38,33 @@ async def get_all_users():
 
 @app.get("/user/{username}")
 async def get_user_info(username: str):
-    return app.collection.find_one({"username": username})
+    return app.users.find_one({"username": username})
 
 @app.get("/{username}/foods")
 async def get_user_foods(username: str):
-    return app.collection.find_one({"username": username})['foods']
+    foods_list = []
+    foods = app.foods.find({})
+    for food in foods:
+        if food['username'] == username:
+            foods_list.append(food)
+    return foods_list
 
 @app.get("/foods")
 async def get_all_foods():
+    result = app.foods.find({})
     foods = []
-    result = app.collection.find({})
-    for users in result:
-        for food in users['foods']:
-            food["userid"] = users["_id"]
-            food["email"] = users["email"]
-            food["phone"] = users["phone"]
-            foods.append(food)
+    for food in result:
+        foods.append(food)
     return foods
+    
+
+@app.get("/{username}/contact")
+async def get_contact_info(username: str):
+    contact = {}
+    user = app.users.find_one({"username": username})
+    contact["email"] = user["email"]
+    contact["phone"] = user["phone"]
+    contact["address"] = user["address"]
+    return contact
 
 app.include_router(book_router, prefix="/book")
