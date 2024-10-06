@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@100..900&display=swap");
 
 #root {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -26,20 +26,6 @@ p {
 
 h2 {
   margin: 0;
-}
-
-#map-container {
-  height: 100%;
-  width: 100%;
-  /* temporarily set the background color so we can tell where the map container is positioned */
-  background-color: lightgrey;
-  z-index: 1;
-}
-
-.mapboxgl-canvas {
-  position: fixed;
-  height: inherit;
-  z-index: 1;
 }
 
 /* NAVBAR COMPONENT */
@@ -430,21 +416,19 @@ body {
   top: 30%;
   bottom:10;
   right: 1%; /* Align to the right side */
-  width: 400px; /* Adjust width as needed */
-  height: 100%; /* Full height */
   background: #265630; /* Semi-transparent background */
   display: flex;
   justify-content: flex-end; /* Align modal to the right */
   align-items: flex-start; /* Align to the top */
   z-index: 1000; /* Ensure the modal is on top */
   border-radius: 20px;
+  padding: 0px 10px;
 }
 
 .modal-content {
   background: #265630; /* Modal background color */
-  padding-top: 30px;
+  padding: 20px;
   border-radius: 8px;
-  padding-right: 30px;
   width: 350px; /* Adjust width as needed */
   position: relative; /* Position relative for close button */
 }
@@ -453,6 +437,11 @@ body {
   display: flex;
   justify-content: space-between; /* Space between header items */
   align-items: center;
+}
+
+.modal-body {
+  display: flex;
+  gap: 10px;
 }
 
 .close-button {
@@ -492,7 +481,7 @@ body {
   display: inline-block;
   width: 100%;
   font-size: 1rem;
-  margin-top: 30px;
+  margin-bottom: 12px;
 }
 
 .done_button {
@@ -505,7 +494,6 @@ body {
   font-weight: 500;
   font-size: 1rem;
   font-family: "Inter", "sans-serif";
-  margin-top: 30px;
 }
 
 .upload-box {
@@ -515,7 +503,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto; /* Adjust width as needed */
+  width: 200px; /* Adjust width as needed */
   height: 200px; /* Adjust height as needed */
   position: relative;
 }

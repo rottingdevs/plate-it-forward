@@ -20,6 +20,23 @@ function MyListingsPage() {
         setModalOpen(false); // Close the modal
     };
 
+    const [cards, setCards] = useState([
+        {
+            name: "Bok choy",
+            description: "2 heads of baby bok choy.",
+            expiry: 2,
+            image: "./bokchoy.png",
+            user: "Bobby Brown",
+        },
+        {
+            name: "Strawberries",
+            description: "Quarter container of strawberries.",
+            expiry: 4,
+            image: "./strawberries.png",
+            user: "Bobby Brown",
+        }
+    ]);
+
     return (
         <>
             <NavBar />
@@ -32,72 +49,22 @@ function MyListingsPage() {
                 </div>
                 <br></br>
                 <div className="food-card-container">
-                    {/* Your MyFoodCard components go here */}
-                    <MyFoodCard
-                        className="my-food-card"
-                        foodItem={{
-                            name: "Bok choy",
-                            description: "2 heads of baby bok choy.",
-                            expiry: 2,
-                            image: "./bokchoy.png",
-                            user: "Bobby Brown",
-                        }}
-                    />
-                    <MyFoodCard
-                        className="my-food-card"
-                        foodItem={{
-                            name: "Strawberries",
-                            description: "Quarter container of strawberries.",
-                            expiry: 4,
-                            image: "./strawberries.png",
-                            user: "Bobby Brown",
-                        }}
-                    />
-                    {/* <MyFoodCard
-                        className="my-food-card"
-                        foodItem={{
-                            name: "Bok choy",
-                            description: "2 heads of baby bok choy.",
-                            expiry: 2,
-                            image: "./bokchoy.png",
-                            user: "Bobby Brown",
-                        }}
-                    />
-                    <MyFoodCard
-                        className="my-food-card"
-                        foodItem={{
-                            name: "Bok choy",
-                            description: "2 heads of baby bok choy.",
-                            expiry: 2,
-                            image: "./bokchoy.png",
-                            user: "Bobby Brown",
-                        }}
-                    />
-                    <MyFoodCard
-                        className="my-food-card"
-                        foodItem={{
-                            name: "Bok choy",
-                            description: "2 heads of baby bok choy.",
-                            expiry: 2,
-                            image: "./bokchoy.png",
-                            user: "Bobby Brown",
-                        }}
-                    />
-                    <MyFoodCard
-                        className="my-food-card"
-                        foodItem={{
-                            name: "Bok choy",
-                            description: "2 heads of baby bok choy.",
-                            expiry: 2,
-                            image: "./bokchoy.png",
-                            user: "Bobby Brown",
-                        }}
-                    /> */}
-                    {/* Duplicate MyFoodCard components as necessary */}
+                    {
+                        cards.map((card, index) => (
+                            <MyFoodCard
+                                key={index}
+                                className="my-food-card"
+                                foodItem={card}
+                            />
+                        ))
+                    }
                 </div>
             </div>
             {/* Modal Component */}
-            <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
+            <Modal isOpen={isModalOpen} onClose={handleCloseModal} addCard={(food) => {
+                setCards((cards) => [...cards, food])
+                setModalOpen(false)
+            }}/>
             {/* <p>{JSON.stringify(response, null, 2)}</p> */}
         </>
     );

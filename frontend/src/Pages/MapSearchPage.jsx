@@ -7,7 +7,7 @@ import "../App.css";
 
 function MapSearchPage() {
   const [selectedItems, setSelectedItems] = useState([]);
-  const [isWidgetVisible, setWidgetVisible] = useState(true); // State to control widget visibility
+  const [isWidgetVisible, setWidgetVisible] = useState(false); // State to control widget visibility
 
   const handleSelectItems = (items) => {
     setSelectedItems(items);
