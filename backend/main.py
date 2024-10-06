@@ -3,8 +3,24 @@ from dotenv import dotenv_values
 from pymongo import MongoClient
 from routes import router as book_router
 
+from user import User
+from user import Food
+
 config = dotenv_values(".env")
 app = FastAPI()
+
+# create example user
+test_user = User(
+    name="John Doe",
+    username="johndoe",
+    email="john@gmail.com",
+    phone="123-456-7890",
+    food= Food(
+        name="apple",
+        description="A red apple",
+        expiry="2022-05-01"
+    )
+)
 
 @app.on_event("startup")
 def startup_db_client():
