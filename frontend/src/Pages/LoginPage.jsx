@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
 import NavBar from '../Components/NavBar';
 import '../App.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function LoginPage() {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const navigate = useNavigate(); 
+
+       const handleSubmit = (event) => {
+        event.preventDefault(); // Prevent page refresh on form submission
+        navigate('/');
+    };
+
     return (
         <>
         <NavBar />
           <div className="login-container">
             <div className="login-box">
               <h1>Sign in to Plate It Forward</h1>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="input-group">
-                  <label>Email address</label>
+                  <label>Username</label>
                   <input 
-                    type="email"
-                    placeholder="Enter email"
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
+                    type="username"
+                    placeholder="Enter username"
+                    value={username}
+                    onChange={(event) => setUsername(event.target.value)}
                   />
                 </div>
                 <div className="input-group">

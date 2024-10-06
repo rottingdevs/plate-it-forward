@@ -48,11 +48,10 @@ async def get_user_info(username: str):
     collection = app.database['books']
     return collection.find_one({ "title": "string" })
 
-def create_user(username, address, email, name, phone):
+def create_user(username, address, name, phone):
     user = {
         "username": username,
         "address": address,
-        "email": email,
         "name": name,
         "phone" : phone
     }
@@ -106,7 +105,6 @@ async def get_all_foods():
     for users in result:
         for food in users['foods']:
             food["userid"] = users["_id"]
-            food["email"] = users["email"]
             food["phone"] = users["phone"]
             foods.append(food)
     return foods
