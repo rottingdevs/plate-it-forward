@@ -9,8 +9,24 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+from user import User
+from user import Food
+
 config = dotenv_values(".env")
 app = FastAPI()
+
+# create example user
+test_user = User(
+    name="John Doe",
+    username="johndoe",
+    email="john@gmail.com",
+    phone="123-456-7890",
+    food= Food(
+        name="apple",
+        description="A red apple",
+        expiry="2022-05-01"
+    )
+)
 
 @app.on_event("startup")
 def startup_db_client():
@@ -23,9 +39,39 @@ def startup_db_client():
 def shutdown_db_client():
     app.mongodb_client.close()
 
-@app.get("/")
-def hello_world():
-    return "Hello world!"
+@app.get("/user/{username}")
+async def get_user_info(username: str):
+    collection = app.database['books']
+    return collection.find_one({ "title": "string" })
+
+def create_user(username, address, email, name, phone):
+    user = {
+        "username": username,
+        "address": address,
+        "email": email,
+        "name": name,
+        "phone" : phone
+    }
+    return user
+
+def create_post(name, description, expiry, image):
+    post = {
+        "name": name,
+        "description": description,
+        "expiry": expiry,
+        "image": image
+    }
+    return post
+
+@app.post("/user/")
+async def insert_user(user: dict):
+    if app.collection.find_one({"username": user['username']}):
+        return {"error": "user already exists"}
+    app.collection.insert_one(user)
+
+@app.post("/user")
+async def insert_post(post: dict):
+    app.collection.insert_one(post)
 
 @app.get("/users")
 async def get_all_users():
