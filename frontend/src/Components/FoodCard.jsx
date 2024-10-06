@@ -11,7 +11,7 @@ function FoodCard(props) {
   //   };
 
   return (
-    <div className="card">
+    <div className="cardInner">
       <img style={{ height: "100%" }} src={props.foodItem.image}></img>
       <div style={{ marginLeft: "15px", position: "relative" }}>
         <h2>{props.foodItem.name}</h2>
