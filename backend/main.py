@@ -25,6 +25,7 @@ def startup_db_client():
     app.database = app.mongodb_client[config.get("DB_NAME")]
     app.users = app.database['users']
     app.foods = app.database['foods']
+    app.locations = app.database['locations']
 
 @app.on_event("shutdown")
 def shutdown_db_client():
@@ -33,6 +34,15 @@ def shutdown_db_client():
 @app.get("/")
 def hello_world():
     return "Hello world!"
+
+@app.get("/addresses")
+async def get_all_addresses():
+    result = app.locations.find({})
+    locations = []
+    for loc in result:
+        locations.append(loc)
+    return locations
+
 
 @app.get("/user/{username}")
 async def get_user_info(username: str):
