@@ -1,8 +1,46 @@
+/* eslint-disable react/jsx-key */
+// import { useEffect } from "react";
 import "../App.css";
 import FoodCard from "./FoodCard";
 
 function FoodSearchWidget() {
-  const food = {};
+  const foodItems = [
+    {
+      name: "Bok choy",
+      description: "2 heads of baby bok choy.",
+      expiry: 2,
+      image: "./bokchoy.png",
+      user: "Bobby Brown",
+    },
+    {
+      name: "Carrots",
+      description: "Half a bag of carrots (0.5lb).",
+      expiry: 1,
+      image: "./carrots.png",
+      user: "Helen Chio",
+    },
+    {
+      name: "Strawberries",
+      description: "Quarter pack of starwberries.",
+      expiry: 4,
+      image: "./strawberries.png",
+      user: "Bobby Brown",
+    },
+  ];
+
+  // function filterResults(ItemsArr, SearchStr) {
+  //   var input = document.getElementById('searchInput');
+  //   var filter = input.value.toUpperCase();
+
+  //   for (i = 0; i < li.length; i++) {
+  //     a = li[i].getElementsByTagName("FoodCard");
+  //     txtValue = a.textContent || a.innerText;
+  //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+  //       li[i].style.display = "";
+  //     } else {
+  //       li[i].style.display = "none";
+  //     }
+  // }
 
   return (
     <div className="foodSearchDiv">
@@ -13,9 +51,9 @@ function FoodSearchWidget() {
           type="text"
           placeholder="Search nearby goods"
           name="search"
+          id="searchInput"
         />
-        <a
-          href=""
+        <button
           style={{
             background: "none",
             border: "none",
@@ -26,44 +64,12 @@ function FoodSearchWidget() {
           }}
         >
           <img src="./search_icon.svg" />
-        </a>
+        </button>
         {/* This is where food cards are*/}
         <div className="scrollable">
-          {food ? (
-            <>
-              <FoodCard
-                foodItem={{
-                  name: "Bok choy",
-                  description: "2 heads of baby bok choy.",
-                  expiry: 2,
-                  image: "./bokchoy.png",
-                  user: "Bobby Brown",
-                }}
-              />
-              <FoodCard
-                foodItem={{
-                  name: "Carrots",
-                  description: "Half a bag of carrots (0.5lb).",
-                  expiry: 1,
-                  image: "./carrots.png",
-                  user: "Helen Chio",
-                }}
-              />
-              <FoodCard
-                foodItem={{
-                  name: "Strawberries",
-                  description: "Quarter pack of starwberries.",
-                  expiry: 4,
-                  image: "./strawberries.png",
-                  user: "Bobby Brown",
-                }}
-              />
-            </>
-          ) : (
-            <p style={{ fontWeight: 500, marginTop: "30px", opacity: "50%" }}>
-              Sorry, there are no nearby goods right now. Check back later!
-            </p>
-          )}
+          {foodItems.map((food) => (
+            <FoodCard foodItem={food}></FoodCard>
+          ))}
         </div>
         <button className="button">Select item(s)</button>
       </div>

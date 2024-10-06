@@ -69,17 +69,6 @@ h2 {
   text-decoration: none;
 }
 
-.navButton:active {
-  margin: 0 20px;
-  font-family: "Inter", sans-serif;
-  background: none;
-  border: none;
-  font-weight: 500;
-  color: #ebbc12;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
 .logo {
   padding: 15px 70px;
 }
@@ -93,6 +82,11 @@ h2 {
   position: absolute;
   margin-top: -35px;
   padding-top: 35px;
+}
+
+.confirmDiv {
+  position: absolute;
+  left: 33%;
 }
 
 .left70pad {
@@ -127,6 +121,10 @@ h2 {
   display: flex;
 }
 
+.card:hover {
+  background-color: #f9ca5574;
+}
+
 .expiryTag {
   background-color: #ffa166;
   border: none;
@@ -145,6 +143,30 @@ h2 {
   font-weight: 500;
   font-size: 1rem;
   font-family: "Inter", "sans-serif";
+  margin-top: 15px;
+}
+
+.button:active {
+  background-color: #f9cb55;
+}
+
+.yellow {
+  background-color: #f9cb55;
+}
+
+.verticalLine {
+  border-left: 3px solid #000000;
+  opacity: 25%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.contactTag {
+  background-color: #74a91f6a;
+  border: solid 2px #74a91f;
+  border-radius: 20px;
+  padding: 4px 7px;
+  margin-right: 10px;
   margin-top: 15px;
 }
 
