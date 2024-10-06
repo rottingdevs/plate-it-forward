@@ -3,7 +3,7 @@ import "../App.css";
 /* eslint-disable react/prop-types */
 function MyFoodCard(props) {
   return (
-    <div className="card">
+    <div className="listing-card">
       <img 
         className="food-image" 
         src={props.foodItem.image} 

@@ -315,7 +315,7 @@ body {
   scroll-behavior: smooth;     /* Optional: smooth scrolling */
 }
 
-.card {
+.listing-card {
   display: flex;               /* Use flexbox for card layout */
   flex-direction: column;      /* Stack image and details vertically */
   width: 250px;                /* Fixed width for each card */
