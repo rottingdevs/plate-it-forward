@@ -95,3 +95,114 @@ h1 {
   border-radius: 10px;
   cursor: pointer;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* LOGIN PAGE CONTAINER */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Full height of the viewport */
+  background-color: #fffcf5; 
+}
+
+/* LOGIN BOX */
+.login-box {
+  background-color: #efede8; /* Slightly lighter dark background */
+  padding: 50px 40px; /* Add padding to make it a bit taller */
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: -100px; /* Move the box up a bit */
+  width: 100%;
+  max-width: 400px;
+  color: #c9d1d9; /* Light text color */
+  min-height: 350px; /* Set a minimum height to make it a bit taller */
+}
+
+/* HEADINGS */
+.login-box h1 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  color: black;
+  font-family: "Roboto Slab", serif;
+}
+
+/* INPUT GROUP (Labels and Inputs) */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+  font-family: "Roboto Slab", serif;
+}
+
+/* INPUT FIELDS */
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #26262660;
+  border-radius: 6px;
+  background-color: #fffcf5;
+  color: rgb(5, 3, 3);
+  font-size: 14px;
+  font-family: "Roboto Slab", serif;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #f9cb55;
+  box-shadow: 0px 0px 5px rgba(249, 203, 85, 0.5);
+}
+
+/* LOGIN BUTTON */
+.login-button {
+  background-color: #265630;
+  border: none;
+  color: white;
+  padding: 12px 60px;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-button:hover {
+  background-color: #2ea043;
+}
+
+.login-button:focus {
+  background-color: #2c974b;
+  outline: none;
+}
+
+/* NEW ACCOUNT GROUP (Labels) */
+.newaccount-group {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.newaccount-group label {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+  font-family: "Roboto Slab", serif;
+}
