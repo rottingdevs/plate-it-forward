@@ -11,7 +11,7 @@ function LandingPage() {
       <div className="full-screen-image">
         <img src="./landing.jpg" alt="Full Screen" className="image" />
         <div className="overlay">
-          <h1 className="text">Welcome to Our Site</h1>
+          <h1 className="text">Together, Let’s Plate It Forward!</h1>
           <Link to="/login" className="link"> {/* Use Link for navigation */}
             <button className="sign-in-button">Sign In</button>
           </Link>
