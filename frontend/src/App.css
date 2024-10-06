@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@100..900&display=swap");
 
 #root {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -14,26 +14,11 @@ h1 {
   margin-right: 50px;
 }
 
-#map-container {
-  height: 100%;
-  width: 100%;
-  /* temporarily set the background color so we can tell where the map container is positioned */
-  background-color: lightgrey;
-  z-index: 1;
-}
-
-.mapboxgl-canvas {
-  position: fixed;
-  height: inherit;
-  z-index: 1;
-}
-
 /* NAVBAR COMPONENT */
 .navbar {
   background-color: #265630;
   position: relative;
   height: 84px;
-  margin-bottom: 35px;
   z-index: 100;
 }
 
@@ -79,6 +64,7 @@ h1 {
   z-index: 50;
   position: absolute;
   margin-top: -35px;
+  padding-top: 35px;
 }
 
 .left70pad {

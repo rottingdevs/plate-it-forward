@@ -9,6 +9,10 @@ export async function helloWorld() {
   return sendRequest("", "GET");
 }
 
+export async function getLocations() {
+  return sendRequest("locations", "GET");
+}
+
 export async function examplePostRequest(user, pw) {
   // this sends a POST request to http://localhost:8080/user with the body
   // { username: "something", password: "something else"

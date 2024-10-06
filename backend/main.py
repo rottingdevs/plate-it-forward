@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import dotenv_values
 from pymongo import MongoClient
-from routes import router as book_router
 import base64
 
 config = dotenv_values(".env")
@@ -35,8 +34,8 @@ def shutdown_db_client():
 def hello_world():
     return "Hello world!"
 
-@app.get("/addresses")
-async def get_all_addresses():
+@app.get("/locations")
+async def get_all_locations():
     result = app.locations.find({})
     locations = []
     for loc in result:
@@ -112,4 +111,3 @@ async def get_all_foods():
             foods.append(food)
     return foods
 
-app.include_router(book_router, prefix="/book")
