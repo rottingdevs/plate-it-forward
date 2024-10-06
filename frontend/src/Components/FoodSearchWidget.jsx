@@ -22,7 +22,7 @@ function FoodSearchWidget() {
             display: "inline",
             position: "absolute",
             right: 55,
-            top: 165,
+            top: 187,
           }}
         >
           <img src="./search_icon.svg" />

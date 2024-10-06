@@ -21,7 +21,8 @@ function FoodCard(props) {
           <p
             className="expiryTag"
             style={
-              props.foodItem.expiry < 2 ? { backgroundColor: "#FF6666" } : {}
+              props.foodItem.expiry < 2 ? { backgroundColor: "#ff6666bc" } : 
+              props.foodItem.expiry > 2 ? { backgroundColor: "#74a91fad" } : {}
             }
           >
             {props.foodItem.expiry} day(s)

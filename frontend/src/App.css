@@ -15,11 +15,13 @@ h1 {
   font-family: "Roboto Slab", "serif";
   padding-top: 30px;
   margin-right: 50px;
+  margin-top: 15px;
 }
 
 p {
   font-family: "Inter", "sans-serif";
   font-size: 1rem;
+  margin-top: 10px;
 }
 
 h2 {
@@ -104,8 +106,9 @@ h2 {
   border-radius: 20px;
   padding: 10px 30px;
   display: inline-block;
-  width: 87%;
+  width: 100%;
   font-size: 1rem;
+  margin-top: 15px;
 }
 
 .scrollable {
@@ -183,8 +186,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;  /* Full height of the viewport */
-  background-color: #fffcf5; 
+  height: 100vh; /* Full height of the viewport */
+  background-color: #fffcf5;
 }
 
 /* LOGIN BOX */
