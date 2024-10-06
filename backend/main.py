@@ -40,15 +40,15 @@ def create_post(name, description, expiry, image):
     }
     return post
 
-@app.post("/")
+@app.post("/user/")
 async def insert_user(user: dict):
     if app.collection.find_one({"username": user['username']}):
         return {"error": "user already exists"}
-    return app.collection.insert_one(user)
+    app.collection.insert_one(user)
 
-@app.post("/")
+@app.post("/user")
 async def insert_post(post: dict):
-    return app.collection.insert_one(post)
+    app.collection.insert_one(post)
 
 @app.get("/users")
 async def get_all_users():
