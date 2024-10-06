@@ -3,24 +3,8 @@ from dotenv import dotenv_values
 from pymongo import MongoClient
 from routes import router as book_router
 
-from user import User
-from user import Food
-
 config = dotenv_values(".env")
 app = FastAPI()
-
-# create example user
-test_user = User(
-    name="John Doe",
-    username="johndoe",
-    email="john@gmail.com",
-    phone="123-456-7890",
-    food= Food(
-        name="apple",
-        description="A red apple",
-        expiry="2022-05-01"
-    )
-)
 
 @app.on_event("startup")
 def startup_db_client():
@@ -37,28 +21,34 @@ async def get_user_info(username: str):
     collection = app.database['books']
     return collection.find_one({ "title": "string" })
 
-def create_user():
-    document = {
-        "username": test_user.username,
-        "address": test_user.address,
-        "email": test_user.email,
-        "name": test_user.name,
-        "phone" : test_user.phone,
-        "foods": [ 
-            {
-                "name": test_user.food.name,
-                "description": test_user.food.description,
-                "expiry": test_user.food.expiry
-            }
-        ]
+def create_user(username, address, email, name, phone):
+    user = {
+        "username": username,
+        "address": address,
+        "email": email,
+        "name": name,
+        "phone" : phone
     }
-    return document
+    return user
 
-@app.get("/")
+def create_post(name, description, expiry, image):
+    post = {
+        "name": name,
+        "description": description,
+        "expiry": expiry,
+        "image": image
+    }
+    return post
+
+@app.post("/")
 async def insert_user(user: dict):
-    create_user()
-    collection = app.database['plate-it-forward']
-    return collection.insert_one(user)
+    if app.collection.find_one({"username": user['username']}):
+        return {"error": "user already exists"}
+    return app.collection.insert_one(user)
+
+@app.post("/")
+async def insert_post(post: dict):
+    return app.collection.insert_one(post)
 
 @app.get("/users")
 async def get_all_users():
