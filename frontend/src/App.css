@@ -119,10 +119,23 @@ h2 {
   margin-right: 15px;
   margin-bottom: 15px;
   display: flex;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .card:hover {
   background-color: #f9ca5574;
+}
+
+/* SELECTED STATE - Takes priority */
+.card.selected {
+  background-color: #f9cb55; /* Ensure this takes precedence */
+  border-radius: 20px;
+  padding: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  transition: background-color 0.3s ease;
 }
 
 .expiryTag {
