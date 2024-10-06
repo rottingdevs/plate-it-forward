@@ -1,16 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@100..900&display=swap");
+
 #root {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Inter", "sans-serif";
 }
 
-#map-container {
+h1 {
+  font-family: "Roboto Slab", "serif";
+  padding-top: 30px;
+  margin-right: 50px;
+  margin-top: 15px;
+}
+
+p {
+  font-family: "Inter", "sans-serif";
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+h2 {
+  margin: 0;
+}
+
+/* NAVBAR COMPONENT */
+.navbar {
+  background-color: #265630;
+  position: relative;
+  height: 84px;
+  z-index: 100;
+}
+
+.navButtonsGroup {
+  display: inline;
+  position: absolute;
+  padding: 33px;
+  padding-right: 70px;
+  right: 0px;
+}
+
+.navButton {
+  margin: 0 20px;
+  font-family: "Inter", sans-serif;
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.logo {
+  padding: 15px 70px;
+}
+
+/* FOOD SEARCH WIDGET */
+.foodSearchDiv {
+  background-color: #fffcf5;
   height: 100%;
+  width: 33%;
+  z-index: 50;
+  position: absolute;
+  margin-top: -35px;
+  padding-top: 35px;
+}
+
+.confirmDiv {
+  position: absolute;
+  left: 33%;
+}
+
+.left70pad {
+  padding-left: 70px;
+  margin-right: 30px;
+}
+
+.searchBar {
+  background-color: #f1ede4;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 30px;
+  display: inline-block;
   width: 100%;
-  /* temporarily set the background color so we can tell where the map container is positioned */
-  background-color: lightgrey;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.scrollable {
+  overflow: auto;
+  max-height: 50vh;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #f0ede4;
+  border: none;
+  border-radius: 20px;
+  padding: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.cardInner {
+  background-color: initial;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #f9ca5574;
+}
+
+/* SELECTED STATE - Takes priority */
+.card.selected {
+  background-color: #f9cb55; /* Ensure this takes precedence */
+  border-radius: 20px;
+  padding: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  transition: background-color 0.3s ease;
+}
+
+.expiryTag {
+  background-color: #ffa166;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 7px;
+  margin-left: 5px;
+}
+
+.button {
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  display: inline-block;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Inter", "sans-serif";
+  margin-top: 15px;
+}
+
+.button:active {
+  background-color: #f9cb55;
+}
+
+.yellow {
+  background-color: #f9cb55;
+}
+
+.verticalLine {
+  border-left: 3px solid #000000;
+  opacity: 25%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.contactTag {
+  background-color: #74a91f6a;
+  border: solid 2px #74a91f;
+  border-radius: 20px;
+  padding: 4px 7px;
+  margin-right: 10px;
+  margin-top: 15px;
 }
 
 .sidebar {
@@ -34,4 +199,382 @@
   padding: 4px 10px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+/* ABOUT SDG */
+.scroll {
+  overflow: scroll;
+  max-height: 90%;
+}
+
+.aboutsdg {
+  margin: auto;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.aboutsdg p, li{
+  font-size: 1.2rem;
+  padding: 15px;
+}
+
+.aboutsdg li{
+  text-align: left;
+  padding: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* LOGIN PAGE CONTAINER */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #fffcf5;
+}
+
+/* LOGIN BOX */
+.login-box {
+  background-color: #efede8; /* Slightly lighter dark background */
+  padding: 50px 40px; /* Add padding to make it a bit taller */
+  padding-top: 30px;
+  border-radius: 20px;
+  border: 5px solid #26563063;
+  text-align: center;
+  margin-top: -100px; /* Move the box up a bit */
+  width: 100%;
+  max-width: 500px;
+  color: #c9d1d9; /* Light text color */
+  min-height: 350px; /* Set a minimum height to make it a bit taller */
+}
+
+/* HEADINGS */
+.login-box h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  color: black;
+  font-family: "Roboto Slab", serif;
+}
+
+/* INPUT GROUP (Labels and Inputs) */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+  font-family: "Roboto Slab", serif;
+}
+
+/* INPUT FIELDS */
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #26262660;
+  border-radius: 20px;
+  background-color: #fffcf5;
+  color: rgb(5, 3, 3);
+  font-size: 1rem;
+  font-family: "Roboto Slab", serif;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #f9cb55;
+  box-shadow: 0px 0px 5px rgba(249, 203, 85, 0.5);
+}
+
+/* LOGIN BUTTON */
+.login-button {
+  background-color: #2ea043;
+  border: none;
+  color: white;
+  padding: 12px 60px;
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-button:hover {
+  background-color: #265630 ;
+}
+
+.login-button:focus {
+  background-color: #265630;
+  outline: none;
+}
+
+/* NEW ACCOUNT GROUP (Labels) */
+.newaccount-group {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.newaccount-group label {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+  font-family: "Roboto Slab", serif;
+}
+
+/* My Listings */
+.food-card-container {
+  display: flex; /* Use flexbox for horizontal layout */
+  overflow-x: scroll; /* Allow horizontal scrolling */
+  padding: 10px; /* Add some padding */
+  gap: 20px; /* Space between cards */
+  max-width: 100%; /* Ensure container doesn't exceed viewport width */
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
+}
+
+.listing-card {
+  display: flex; /* Use flexbox for card layout */
+  flex-direction: column; /* Stack image and details vertically */
+  width: 250px; /* Fixed width for each card */
+  height: auto; /* Allow height to adjust based on content */
+  min-height: 300px;
+  min-width: 250px; /* Minimum height to keep aspect ratio */
+  border: 3px solid #ccc; /* Optional: Add border for clarity */
+  border-radius: 20px; /* Optional: Rounded corners */
+  background-color: #fff; /* Optional: Background color */
+  padding:5px;
+}
+
+.listing-card:hover {
+  background-color: #f9ca5573; /* Optional: Background color */
+}
+
+.food-image {
+  width: 100%; /* Full width of the card */
+  height: 150px; /* Set a fixed height for the image */
+  object-fit: cover; /* Cover the area without distortion */
+}
+
+.food-details {
+  padding: 15px; /* Padding around the text */
+  position: relative; /* For absolute positioning of text if needed */
+}
+
+.listing-button {
+  background-color: #d3dbb3; /* Background for button */
+  border: 2px solid #74a91f; /* Green outline */
+  border-radius: 40px; /* Rounded button corners */
+  padding: 8px 20px; /* Button padding */
+  display: inline-block; /* Adjust button display */
+  margin-top: 15px; /* Space above button */
+  color: #1e1e1e; /* Text color */
+}
+
+.expiryTag {
+  padding: 5px 10px; /* Padding for expiry tag */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color for the expiry tag */
+}
+
+/* App.css */
+.add-food-button {
+  border: 2px solid #1e1e1e; /* Outline color */
+  border-radius: 50%; /* Circular shape */
+  width: 40px; /* Width of the button */
+  height: 40px; /* Height of the button */
+  font-size: 24px; /* Font size for the "+" */
+  background-color: transparent; /* Transparent background */
+  color: #1e1e1e; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+  display: flex; /* Flex display for centering */
+  justify-content: center; /* Center the "+" horizontally */
+  align-items: center; /* Center the "+" vertically */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.add-food-button:hover {
+  background-color: #1e1e1e; /* Change background on hover */
+  color: white; /* Change text color on hover */
+}
+
+/* Modal.css */
+.modal-overlay {
+  position: fixed;
+  top: 30%;
+  bottom:10;
+  right: 1%; /* Align to the right side */
+  background: #265630; /* Semi-transparent background */
+  display: flex;
+  justify-content: flex-end; /* Align modal to the right */
+  align-items: flex-start; /* Align to the top */
+  z-index: 1000; /* Ensure the modal is on top */
+  border-radius: 20px;
+  padding: 0px 10px;
+}
+
+.modal-content {
+  background: #265630; /* Modal background color */
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px; /* Adjust width as needed */
+  position: relative; /* Position relative for close button */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between; /* Space between header items */
+  align-items: center;
+}
+
+.modal-body {
+  display: flex;
+  gap: 10px;
+}
+
+.close-button {
+  background: transparent; /* Transparent background */
+  border: none; /* No border */
+  font-size: 24px; /* Larger font size */
+  cursor: pointer; /* Pointer on hover */
+  color: #ffffff; /* Color for close button */
+}
+
+.file-upload {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px; /* Space below file upload */
+}
+
+.done-button {
+  background-color: #28a745; /* Bootstrap success color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* App.css */
+.text-white {
+  color: #ffffff; /* Change text color to white */
+  font-family: "Inter", sans-serif;
+}
+
+.food-fields {
+  background-color: #f1ede4;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.done_button {
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  display: inline-block;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Inter", "sans-serif";
+}
+
+.upload-box {
+  background-color: #f0ede4; /* Box color */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  position: relative;
+}
+
+.file-upload {
+  display: none; /* Hide the actual file input */
+}
+
+.upload-label {
+  cursor: pointer;
+}
+
+.upload-icon {
+  width: 50px; /* Adjust icon size as needed */
+  height: 50px;
+  filter: grayscale(100%); /* Make the image #525252 */
+}
+
+/* Landing page */
+
+.full-screen-image {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent any overflow */
+}
+
+.image {
+  position: absolute; /* Position the image absolutely */
+  top: 50%; /* Move to the center vertically */
+  left: 50%; /* Move to the center horizontally */
+  width: 100vw; /* Set width to 100% of the viewport */
+  height: 100vh; /* Set height to 100% of the viewport */
+  object-fit: cover; /* Scale the image to cover the area */
+  transform: translate(-50%, -50%); /* Center the image */
+}
+
+.overlay {
+  position: absolute; /* Position the overlay absolutely */
+  top: 40%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center */
+  text-align: center; /* Center text */
+  color: white; /* Change text color as needed */
+}
+
+.text {
+  font-family: "Roboto Slab", "serif";
+  font-size: 5rem; /* Make the text super big */
+  margin-bottom: 20px; /* Space between text and button */
+  color: white; /* Text color */
+  text-shadow: -5px -5px 0 #74a91f, 5px -5px 0 #74a91f, -5px 5px 0 #74a91f,
+    5px 5px 0 #74a91f;
+  font-weight: 700;
+}
+
+.sign-in-button {
+  width: 100%; /* Make button full width */
+  max-width: 300px; /* Set a max width for the button */
+  padding: 15px; /* Button padding */
+  font-size: 20px; /* Button text size */
+  font-weight: 500;
+  background-color: #74a91f; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  margin: 0 auto; /* Center button */
+  font-family: "Inter", "sans-serif";
+}
+
+.sign-in-button:hover {
+  background-color: #265630; /* Darker shade on hover */
 }

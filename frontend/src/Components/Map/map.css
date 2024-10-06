@@ -1,0 +1,32 @@
+#map-container {
+  height: 100%;
+  width: 100%;
+  /* temporarily set the background color so we can tell where the map container is positioned */
+  background-color: lightgrey;
+  z-index: 1;
+}
+
+.mapboxgl-canvas {
+  position: fixed;
+  height: inherit;
+  z-index: 1;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.marker {
+  background-image: url('src/assets/pins/pin01.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}

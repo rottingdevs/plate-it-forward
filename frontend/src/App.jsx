@@ -1,34 +1,28 @@
-import { useRef, useEffect } from 'react'
-import mapboxgl from 'mapbox-gl'
+import "mapbox-gl/dist/mapbox-gl.css";
 
-import 'mapbox-gl/dist/mapbox-gl.css';
-
-import './App.css'
+import "./App.css";
+import LoginPage from "./Pages/LoginPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignUpPage from "./Pages/SignUpPage";
+import MyListingsPage from "./Pages/MyListingsPage";
+import LandingPage from "./Pages/LandingPage";
+import MapSearchPage from "./Pages/MapSearchPage";
+import AboutSDG from "./Pages/AboutSDG";
 
 function App() {
-
-  const mapRef = useRef()
-  const mapContainerRef = useRef()
-
-  useEffect(() => {
-    mapboxgl.accessToken = 'pk.eyJ1Ijoia3dhbnJhYzIiLCJhIjoiY2x4Zzd2aWs3MHpyejJrcG9zdjVuN3Y0ayJ9.NpYBe00KtZ6Q00KmLqgm3A'
-    mapRef.current = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [-79.4, 43.6],
-      zoom: 9
-    });
-
-    return () => {
-      mapRef.current.remove()
-    }
-  }, [])
-
   return (
-    <>
-      <div id='map-container' ref={mapContainerRef}/>
-    </>
-  )
+    // add routers
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/search" element={<MapSearchPage />} />
+        <Route path="/mylistings" element={<MyListingsPage />} />
+        <Route path="/aboutsdg" element={<AboutSDG />} />
+      </Routes>
+    </BrowserRouter>
+  ) 
 }
 
-export default App
+export default App;
