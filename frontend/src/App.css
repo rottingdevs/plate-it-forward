@@ -281,3 +281,185 @@ body {
   color: black;
   font-family: "Roboto Slab", serif;
 }
+
+
+/* My Listings */
+.food-card-container {
+  display: flex;                /* Use flexbox for horizontal layout */
+  overflow-x: scroll;            /* Allow horizontal scrolling */
+  padding: 10px;               /* Add some padding */
+  gap: 10px;                   /* Space between cards */
+  max-width: 100%;             /* Ensure container doesn't exceed viewport width */
+  scroll-behavior: smooth;     /* Optional: smooth scrolling */
+}
+
+.card {
+  display: flex;               /* Use flexbox for card layout */
+  flex-direction: column;      /* Stack image and details vertically */
+  width: 250px;                /* Fixed width for each card */
+  height: auto;                /* Allow height to adjust based on content */
+  min-height: 300px; 
+  min-width: 250px;           /* Minimum height to keep aspect ratio */
+  border: 1px solid #ccc;      /* Optional: Add border for clarity */
+  border-radius: 8px;          /* Optional: Rounded corners */
+  background-color: #fff;      /* Optional: Background color */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Shadow for depth */
+}
+
+.food-image {
+  width: 100%;                 /* Full width of the card */
+  height: 150px;               /* Set a fixed height for the image */
+  object-fit: cover;           /* Cover the area without distortion */
+}
+
+.food-details {
+  padding: 15px;               /* Padding around the text */
+  position: relative;          /* For absolute positioning of text if needed */
+}
+
+.listing-button {
+  background-color: #d3dbb3; /* Background for button */
+  border: 2px solid #74A91F; /* Green outline */
+  border-radius: 40px;       /* Rounded button corners */
+  padding: 8px 20px;         /* Button padding */
+  display: inline-block;      /* Adjust button display */
+  margin-top: 15px;          /* Space above button */
+  color: #1E1E1E;            /* Text color */
+}
+
+.expiryTag {
+  padding: 5px 10px;         /* Padding for expiry tag */
+  border-radius: 5px;        /* Rounded corners */
+  color: white;               /* Text color for the expiry tag */
+}
+
+/* App.css */
+.add-food-button {
+  border: 2px solid #1E1E1E; /* Outline color */
+  border-radius: 50%; /* Circular shape */
+  width: 40px; /* Width of the button */
+  height: 40px; /* Height of the button */
+  font-size: 24px; /* Font size for the "+" */
+  background-color: transparent; /* Transparent background */
+  color: #1E1E1E; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+  display: flex; /* Flex display for centering */
+  justify-content: center; /* Center the "+" horizontally */
+  align-items: center; /* Center the "+" vertically */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.add-food-button:hover {
+  background-color: #1E1E1E; /* Change background on hover */
+  color: white; /* Change text color on hover */
+}
+
+
+/* Modal.css */
+.modal-overlay {
+  position: fixed;
+  top: 30%;
+  right: 1%; /* Align to the right side */
+  width: 400px; /* Adjust width as needed */
+  height: 100%; /* Full height */
+  background: #265630; /* Semi-transparent background */
+  display: flex;
+  justify-content: flex-end; /* Align modal to the right */
+  align-items: flex-start; /* Align to the top */
+  z-index: 1000; /* Ensure the modal is on top */
+  border-radius: 20px;
+}
+
+.modal-content {
+  background: #265630; /* Modal background color */
+  padding-top: 30px;
+  border-radius: 8px;
+  padding-right: 30px;
+  width: 350px; /* Adjust width as needed */
+  position: relative; /* Position relative for close button */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between; /* Space between header items */
+  align-items: center;
+}
+
+.close-button {
+  background: transparent; /* Transparent background */
+  border: none; /* No border */
+  font-size: 24px; /* Larger font size */
+  cursor: pointer; /* Pointer on hover */
+  color: #FFFFFF; /* Color for close button */
+}
+
+.file-upload {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px; /* Space below file upload */
+}
+
+.done-button {
+  background-color: #28a745; /* Bootstrap success color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* App.css */
+.text-white {
+  color: #FFFFFF; /* Change text color to white */
+  font-family: "Inter", sans-serif;
+}
+
+.food-fields {
+  background-color: #f1ede4;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+.done_button {
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  display: inline-block;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Inter", "sans-serif";
+  margin-top: 30px;
+}
+
+.upload-box {
+  background-color: #F0EDE4; /* Box color */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  position: relative;
+}
+
+.file-upload {
+  display: none; /* Hide the actual file input */
+}
+
+.upload-label {
+  cursor: pointer;
+}
+
+.upload-icon {
+  width: 50px; /* Adjust icon size as needed */
+  height: 50px;
+  filter: grayscale(100%); /* Make the image #525252 */
+}

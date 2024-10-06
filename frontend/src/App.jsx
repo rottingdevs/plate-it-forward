@@ -1,7 +1,7 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 
 import "./App.css";
-import MapSearch from "./Pages/MapSearchPage";
+import MapSearch from "./Pages/MyListingsPage";
 import LoginPage from "./Pages/LoginPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUpPage from "./Pages/SignUpPage";
