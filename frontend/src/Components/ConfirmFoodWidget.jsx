@@ -1,6 +1,6 @@
 import "../App.css";
 
-function ConfirmFoodWidget({ selectedItems }) {
+function ConfirmFoodWidget({ selectedItems, onClose }) {
   return (
     <div className="foodSearchDiv confirmDiv">
       <div style={{ marginRight: "30px", display: "flex", height: "85%" }}>
@@ -28,6 +28,7 @@ function ConfirmFoodWidget({ selectedItems }) {
           <button
             style={{ position: "absolute", bottom: 84, width: "88%" }}
             className="button yellow"
+            onClick={onClose}
           >
             Done
           </button>

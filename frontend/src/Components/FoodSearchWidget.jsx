@@ -73,7 +73,7 @@ function FoodSearchWidget({ onSelectItems }) {
             filteredItems.map((food) => (  // Render only the filtered items
               <div
                 key={food.id}
-                className={`food-card ${selectedItems.some(selected => selected.id === food.id) ? 'selected' : ''}`}
+                className={`card ${selectedItems.some(selected => selected.id === food.id) ? 'selected' : ''}`}
                 onClick={() => toggleSelectItem(food)}
                 style={{ cursor: 'pointer' }}
               >

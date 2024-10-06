@@ -6,21 +6,26 @@ import FoodSearchWidget from "../Components/FoodSearchWidget";
 import "../App.css";
 
 function MapSearchPage() {
-  // State to track the selected food items
   const [selectedItems, setSelectedItems] = useState([]);
+  const [isWidgetVisible, setWidgetVisible] = useState(true); // State to control widget visibility
 
-  // Handler to update selected items when the "Select item(s)" button is clicked
   const handleSelectItems = (items) => {
-    setSelectedItems(items); // Update the selected food items
+    setSelectedItems(items);
+    setWidgetVisible(true);
+  };
+
+  const handleCloseWidget = () => {
+    setWidgetVisible(false);
   };
 
   return (
     <>
       <NavBar />
-      {/* Pass the handler to FoodSearchWidget */}
       <FoodSearchWidget onSelectItems={handleSelectItems} />
-      {/* Conditionally render ConfirmFoodWidget if there are selected items */}
-      {selectedItems.length > 0 && <ConfirmFoodWidget selectedItems={selectedItems} />}
+      {/* Conditionally render ConfirmFoodWidget if the widget is visible */}
+      {isWidgetVisible && (
+        <ConfirmFoodWidget selectedItems={selectedItems} onClose={handleCloseWidget} />
+      )}
       <Map />
     </>
   );
