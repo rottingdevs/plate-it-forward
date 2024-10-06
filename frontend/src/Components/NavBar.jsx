@@ -8,7 +8,7 @@ function NavBar() {
         <a className="navButton" href="search">
           Search food
         </a>
-        <a className="navButton" href="profile">
+        <a className="navButton" href="mylistings">
           My food
         </a>
         <a className="navButton" href="about">
