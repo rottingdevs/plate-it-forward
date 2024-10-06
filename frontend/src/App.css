@@ -207,9 +207,25 @@ h2 {
 }
 
 /* ABOUT SDG */
+.scroll {
+  overflow: scroll;
+  max-height: 90%;
+}
+
 .aboutsdg {
   margin: auto;
   text-align: center;
+  max-width: 1000px;
+}
+
+.aboutsdg p, li{
+  font-size: 1.2rem;
+  padding: 15px;
+}
+
+.aboutsdg li{
+  text-align: left;
+  padding: 15px;
 }
 
 * {
@@ -329,7 +345,7 @@ body {
   display: flex; /* Use flexbox for horizontal layout */
   overflow-x: scroll; /* Allow horizontal scrolling */
   padding: 10px; /* Add some padding */
-  gap: 10px; /* Space between cards */
+  gap: 20px; /* Space between cards */
   max-width: 100%; /* Ensure container doesn't exceed viewport width */
   scroll-behavior: smooth; /* Optional: smooth scrolling */
 }
@@ -341,10 +357,14 @@ body {
   height: auto; /* Allow height to adjust based on content */
   min-height: 300px;
   min-width: 250px; /* Minimum height to keep aspect ratio */
-  border: 1px solid #ccc; /* Optional: Add border for clarity */
-  border-radius: 8px; /* Optional: Rounded corners */
+  border: 3px solid #ccc; /* Optional: Add border for clarity */
+  border-radius: 20px; /* Optional: Rounded corners */
   background-color: #fff; /* Optional: Background color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
+  padding:5px;
+}
+
+.listing-card:hover {
+  background-color: #f9ca5573; /* Optional: Background color */
 }
 
 .food-image {
@@ -399,6 +419,7 @@ body {
 .modal-overlay {
   position: fixed;
   top: 30%;
+  bottom:10;
   right: 1%; /* Align to the right side */
   width: 400px; /* Adjust width as needed */
   height: 100%; /* Full height */
