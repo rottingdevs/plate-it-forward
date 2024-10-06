@@ -2,7 +2,7 @@ async function sendRequest(url, method, data) {
   const options = { method, headers: new Headers() };
   options.headers.append("Content-Type", "application/json");
   options.body = JSON.stringify(data);
-  return fetch(`http://127.0.0.1:8080/${url}`, options).then((res) => res.json());
+  return fetch(`https://dev.plateitforward.co/${url}`, options).then((res) => res.json());
 }
 
 export async function helloWorld() {
