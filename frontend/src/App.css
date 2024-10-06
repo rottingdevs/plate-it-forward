@@ -193,6 +193,12 @@ h2 {
   cursor: pointer;
 }
 
+/* ABOUT SDG */
+.aboutsdg {
+  margin: auto;
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -216,21 +222,22 @@ body {
 .login-box {
   background-color: #efede8; /* Slightly lighter dark background */
   padding: 50px 40px; /* Add padding to make it a bit taller */
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  padding-top: 30px;
+  border-radius: 20px;
+  border: 5px solid #26563063;
   text-align: center;
   margin-top: -100px; /* Move the box up a bit */
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   color: #c9d1d9; /* Light text color */
   min-height: 350px; /* Set a minimum height to make it a bit taller */
 }
 
 /* HEADINGS */
 .login-box h1 {
-  font-size: 26px;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   margin-left: 40px;
   color: black;
   font-family: "Roboto Slab", serif;
@@ -243,7 +250,7 @@ body {
 }
 
 .input-group label {
-  font-size: 14px;
+  font-size: 1rem;
   display: block;
   margin-bottom: 5px;
   color: black;
@@ -255,10 +262,10 @@ body {
   width: 100%;
   padding: 10px;
   border: 1px solid #26262660;
-  border-radius: 6px;
+  border-radius: 20px;
   background-color: #fffcf5;
   color: rgb(5, 3, 3);
-  font-size: 14px;
+  font-size: 1rem;
   font-family: "Roboto Slab", serif;
 }
 
@@ -270,23 +277,23 @@ body {
 
 /* LOGIN BUTTON */
 .login-button {
-  background-color: #265630;
+  background-color: #2ea043;
   border: none;
   color: white;
   padding: 12px 60px;
   font-family: "Roboto Slab", serif;
-  font-size: 15px;
-  border-radius: 6px;
+  font-size: 1rem;
+  border-radius: 20px;
   cursor: pointer;
   width: 100%;
 }
 
 .login-button:hover {
-  background-color: #2ea043;
+  background-color: #265630 ;
 }
 
 .login-button:focus {
-  background-color: #2c974b;
+  background-color: #265630;
   outline: none;
 }
 
@@ -304,66 +311,65 @@ body {
   font-family: "Roboto Slab", serif;
 }
 
-
 /* My Listings */
 .food-card-container {
-  display: flex;                /* Use flexbox for horizontal layout */
-  overflow-x: scroll;            /* Allow horizontal scrolling */
-  padding: 10px;               /* Add some padding */
-  gap: 10px;                   /* Space between cards */
-  max-width: 100%;             /* Ensure container doesn't exceed viewport width */
-  scroll-behavior: smooth;     /* Optional: smooth scrolling */
+  display: flex; /* Use flexbox for horizontal layout */
+  overflow-x: scroll; /* Allow horizontal scrolling */
+  padding: 10px; /* Add some padding */
+  gap: 10px; /* Space between cards */
+  max-width: 100%; /* Ensure container doesn't exceed viewport width */
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
 }
 
 .listing-card {
-  display: flex;               /* Use flexbox for card layout */
-  flex-direction: column;      /* Stack image and details vertically */
-  width: 250px;                /* Fixed width for each card */
-  height: auto;                /* Allow height to adjust based on content */
-  min-height: 300px; 
-  min-width: 250px;           /* Minimum height to keep aspect ratio */
-  border: 1px solid #ccc;      /* Optional: Add border for clarity */
-  border-radius: 8px;          /* Optional: Rounded corners */
-  background-color: #fff;      /* Optional: Background color */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Shadow for depth */
+  display: flex; /* Use flexbox for card layout */
+  flex-direction: column; /* Stack image and details vertically */
+  width: 250px; /* Fixed width for each card */
+  height: auto; /* Allow height to adjust based on content */
+  min-height: 300px;
+  min-width: 250px; /* Minimum height to keep aspect ratio */
+  border: 1px solid #ccc; /* Optional: Add border for clarity */
+  border-radius: 8px; /* Optional: Rounded corners */
+  background-color: #fff; /* Optional: Background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
 }
 
 .food-image {
-  width: 100%;                 /* Full width of the card */
-  height: 150px;               /* Set a fixed height for the image */
-  object-fit: cover;           /* Cover the area without distortion */
+  width: 100%; /* Full width of the card */
+  height: 150px; /* Set a fixed height for the image */
+  object-fit: cover; /* Cover the area without distortion */
 }
 
 .food-details {
-  padding: 15px;               /* Padding around the text */
-  position: relative;          /* For absolute positioning of text if needed */
+  padding: 15px; /* Padding around the text */
+  position: relative; /* For absolute positioning of text if needed */
 }
 
 .listing-button {
   background-color: #d3dbb3; /* Background for button */
-  border: 2px solid #74A91F; /* Green outline */
-  border-radius: 40px;       /* Rounded button corners */
-  padding: 8px 20px;         /* Button padding */
-  display: inline-block;      /* Adjust button display */
-  margin-top: 15px;          /* Space above button */
-  color: #1E1E1E;            /* Text color */
+  border: 2px solid #74a91f; /* Green outline */
+  border-radius: 40px; /* Rounded button corners */
+  padding: 8px 20px; /* Button padding */
+  display: inline-block; /* Adjust button display */
+  margin-top: 15px; /* Space above button */
+  color: #1e1e1e; /* Text color */
 }
 
 .expiryTag {
-  padding: 5px 10px;         /* Padding for expiry tag */
-  border-radius: 5px;        /* Rounded corners */
-  color: white;               /* Text color for the expiry tag */
+  padding: 5px 10px; /* Padding for expiry tag */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color for the expiry tag */
 }
 
 /* App.css */
 .add-food-button {
-  border: 2px solid #1E1E1E; /* Outline color */
+  border: 2px solid #1e1e1e; /* Outline color */
   border-radius: 50%; /* Circular shape */
   width: 40px; /* Width of the button */
   height: 40px; /* Height of the button */
   font-size: 24px; /* Font size for the "+" */
   background-color: transparent; /* Transparent background */
-  color: #1E1E1E; /* Text color */
+  color: #1e1e1e; /* Text color */
   cursor: pointer; /* Pointer on hover */
   display: flex; /* Flex display for centering */
   justify-content: center; /* Center the "+" horizontally */
@@ -372,10 +378,9 @@ body {
 }
 
 .add-food-button:hover {
-  background-color: #1E1E1E; /* Change background on hover */
+  background-color: #1e1e1e; /* Change background on hover */
   color: white; /* Change text color on hover */
 }
-
 
 /* Modal.css */
 .modal-overlay {
@@ -412,7 +417,7 @@ body {
   border: none; /* No border */
   font-size: 24px; /* Larger font size */
   cursor: pointer; /* Pointer on hover */
-  color: #FFFFFF; /* Color for close button */
+  color: #ffffff; /* Color for close button */
 }
 
 .file-upload {
@@ -432,7 +437,7 @@ body {
 
 /* App.css */
 .text-white {
-  color: #FFFFFF; /* Change text color to white */
+  color: #ffffff; /* Change text color to white */
   font-family: "Inter", sans-serif;
 }
 
@@ -461,7 +466,7 @@ body {
 }
 
 .upload-box {
-  background-color: #F0EDE4; /* Box color */
+  background-color: #f0ede4; /* Box color */
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -490,56 +495,55 @@ body {
 
 .full-screen-image {
   position: relative;
-  width: 100vw;      /* Full viewport width */
-  height: 100vh;     /* Full viewport height */
-  overflow: hidden;  /* Prevent any overflow */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent any overflow */
 }
 
 .image {
   position: absolute; /* Position the image absolutely */
-  top: 50%;          /* Move to the center vertically */
-  left: 50%;         /* Move to the center horizontally */
-  width: 100vw;      /* Set width to 100% of the viewport */
-  height: 100vh;     /* Set height to 100% of the viewport */
+  top: 50%; /* Move to the center vertically */
+  left: 50%; /* Move to the center horizontally */
+  width: 100vw; /* Set width to 100% of the viewport */
+  height: 100vh; /* Set height to 100% of the viewport */
   object-fit: cover; /* Scale the image to cover the area */
   transform: translate(-50%, -50%); /* Center the image */
 }
 
-
 .overlay {
-  position: absolute;       /* Position the overlay absolutely */
-  top: 50%;                /* Center vertically */
-  left: 50%;               /* Center horizontally */
+  position: absolute; /* Position the overlay absolutely */
+  top: 40%; /* Center vertically */
+  left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust to center */
-  text-align: center;      /* Center text */
-  color: white;            /* Change text color as needed */
+  text-align: center; /* Center text */
+  color: white; /* Change text color as needed */
 }
 
 .text {
-  font-size: 6rem;         /* Make the text super big */
-  margin-bottom: 20px;     /* Space between text and button */
+  font-family: "Roboto Slab", "serif";
+  font-size: 5rem; /* Make the text super big */
+  margin-bottom: 20px; /* Space between text and button */
   color: white; /* Text color */
-  text-shadow: 
-    -5px -5px 0 #74A91F,  
-    5px -5px 0 #74A91F,
-    -5px  5px 0 #74A91F,
-    5px  5px 0 #74A91F;
+  text-shadow: -5px -5px 0 #74a91f, 5px -5px 0 #74a91f, -5px 5px 0 #74a91f,
+    5px 5px 0 #74a91f;
+  font-weight: 700;
 }
 
 .sign-in-button {
-  width: 100%;          /* Make button full width */
-  max-width: 300px;    /* Set a max width for the button */
-  padding: 15px;       /* Button padding */
-  font-size: 1.5rem;   /* Button text size */
-  background-color: #74A91F; /* Button background color */
-  color: white;        /* Button text color */
-  border: none;        /* Remove border */
-  border-radius: 5px;  /* Rounded corners */
-  cursor: pointer;     /* Pointer cursor */
-  margin: 0 auto;     /* Center button */
+  width: 100%; /* Make button full width */
+  max-width: 300px; /* Set a max width for the button */
+  padding: 15px; /* Button padding */
+  font-size: 20px; /* Button text size */
+  font-weight: 500;
+  background-color: #74a91f; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  margin: 0 auto; /* Center button */
   font-family: "Inter", "sans-serif";
 }
 
 .sign-in-button:hover {
-  background-color: #5c8e1a; /* Darker shade on hover */
+  background-color: #265630; /* Darker shade on hover */
 }
