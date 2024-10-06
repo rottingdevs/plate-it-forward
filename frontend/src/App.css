@@ -154,7 +154,7 @@ body {
   font-size: 26px;
   text-align: center;
   margin-bottom: 10px;
-  margin-left: 25px;
+  margin-left: 40px;
   color: black;
   font-family: "Roboto Slab", serif;
 }
@@ -211,4 +211,18 @@ body {
 .login-button:focus {
   background-color: #2c974b;
   outline: none;
+}
+
+/* NEW ACCOUNT GROUP (Labels) */
+.newaccount-group {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.newaccount-group label {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+  font-family: "Roboto Slab", serif;
 }
